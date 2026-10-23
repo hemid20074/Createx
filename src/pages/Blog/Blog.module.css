@@ -1,0 +1,90 @@
+.section {
+  margin-top: 60px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.category > div {
+  width: 160px;
+}
+.search {
+  width: 285px;
+}
+
+.grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 60px 30px;
+}
+.cell {
+  grid-column: span 4;
+}
+/* the two wide cards: 705px + 495px in the design */
+.wide {
+  grid-column: span 7;
+}
+.wide + .wide {
+  grid-column: span 5;
+}
+
+.empty {
+  margin-top: 60px;
+  padding: 48px 24px;
+  text-align: center;
+  border: 1px dashed var(--gray-400);
+  border-radius: var(--radius);
+  color: var(--gray-700);
+}
+
+.pagination {
+  margin-top: 80px;
+}
+
+@media (max-width: 1200px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filters {
+    justify-content: space-between;
+  }
+}
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cell,
+  .wide,
+  .wide + .wide {
+    grid-column: span 1;
+  }
+}
+@media (max-width: 680px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .category > div {
+    flex: 1;
+    width: auto;
+  }
+  .search {
+    width: 100%;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-top: 40px;
+  }
+}

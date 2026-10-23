@@ -1,0 +1,114 @@
+.section {
+  position: relative;
+  margin-top: 60px;
+}
+.bg {
+  position: absolute;
+  inset: -150px 0 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.toolbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.category {
+  width: 280px;
+}
+.category > div,
+.sort > div {
+  width: 160px;
+}
+.sort {
+  width: auto;
+}
+.pager {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.perPage > div {
+  width: 72px;
+}
+.pagerText {
+  font-size: 14px;
+  color: var(--gray-800);
+  white-space: nowrap;
+}
+.search {
+  flex: 1;
+  max-width: 282px;
+  margin-left: auto;
+}
+.view {
+  display: flex;
+  gap: 12px;
+}
+.view button {
+  display: flex;
+  color: var(--gray-600);
+  transition: color 0.2s ease;
+}
+.view button:hover,
+.viewActive {
+  color: var(--primary) !important;
+}
+
+.results {
+  position: relative;
+  margin-top: 60px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.list > article {
+  border: 1px solid var(--gray-300);
+}
+
+.empty {
+  margin-top: 60px;
+  padding: 48px 24px;
+  text-align: center;
+  border: 1px dashed var(--gray-400);
+  border-radius: var(--radius);
+  color: var(--gray-700);
+}
+
+.pagination {
+  position: relative;
+  margin-top: 60px;
+}
+
+@media (max-width: 1280px) {
+  .toolbar {
+    flex-wrap: wrap;
+    gap: 20px 32px;
+  }
+  .search {
+    margin-left: 0;
+    max-width: none;
+  }
+}
+@media (max-width: 760px) {
+  .toolbar {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .category,
+  .sort {
+    width: 100%;
+  }
+  .category > div,
+  .sort > div {
+    width: auto;
+    flex: 1;
+  }
+  .view {
+    display: none;
+  }
+}

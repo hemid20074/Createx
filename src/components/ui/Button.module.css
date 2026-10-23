@@ -1,0 +1,91 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+  white-space: nowrap;
+  transition:
+    box-shadow 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+  isolation: isolate;
+}
+
+.large {
+  height: 52px;
+  padding: 0 40px;
+  font-size: 16px;
+}
+.regular {
+  height: 44px;
+  padding: 0 32px;
+  font-size: 14px;
+}
+.small {
+  height: 36px;
+  padding: 0 24px;
+  font-size: 12px;
+}
+.block {
+  display: flex;
+  width: 100%;
+}
+
+/* solid: brand gradient */
+.solid {
+  background: var(--gradient);
+  color: var(--white);
+}
+.solid:hover {
+  box-shadow: var(--shadow-primary);
+}
+
+/* outline: gradient text + primary border, fills on hover */
+.outline {
+  border: 1px solid var(--primary);
+  background: transparent;
+}
+.outline .label {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.outline::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: var(--gradient);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: -1;
+}
+.outline:hover::before {
+  opacity: 1;
+}
+.outline:hover .label {
+  background: none;
+  color: var(--white);
+}
+
+/* outline on dark/colored backgrounds */
+.light {
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+.light:hover {
+  background: var(--white);
+  color: var(--gray-900);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}

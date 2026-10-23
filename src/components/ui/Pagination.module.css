@@ -1,0 +1,27 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.page {
+  min-width: 10px;
+  font-weight: 700;
+  color: var(--gray-800);
+  transition: color 0.2s ease;
+}
+.page:hover,
+.active {
+  color: var(--primary);
+}
+.next {
+  display: flex;
+  color: var(--gray-800);
+}
+.next:hover:not(:disabled) {
+  color: var(--primary);
+}
+.next:disabled {
+  opacity: 0.3;
+  cursor: default;
+}

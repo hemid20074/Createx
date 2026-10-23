@@ -1,0 +1,253 @@
+/* About */
+.about {
+  margin-top: 120px;
+}
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 600px 495px;
+  justify-content: space-between;
+  gap: 60px;
+  align-items: start;
+}
+.aboutText {
+  margin-top: 40px;
+}
+.learnTitle {
+  margin-top: 48px;
+}
+.learnList {
+  margin-top: 24px;
+  gap: 4px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 39px 31px 40px;
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-small);
+  position: sticky;
+  top: 100px;
+}
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.factLabel {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-900);
+}
+.factValue {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--primary);
+}
+.factText {
+  margin-top: 4px;
+  color: var(--gray-700);
+}
+
+/* Steps */
+.steps {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  counter-reset: none;
+}
+.step {
+  position: relative;
+}
+.step + .step::before,
+.step:not(:last-child)::after {
+  content: none;
+}
+.stepNum {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.3;
+  color: var(--gray-400);
+  transition: color 0.3s ease;
+}
+/* dashed connector between steps */
+.step:not(:last-child) .stepNum::after {
+  content: '';
+  flex: 1;
+  border-top: 1px dashed var(--gray-400);
+}
+/* halo behind the number on hover */
+.stepNum::before {
+  content: '';
+  position: absolute;
+  left: -31px;
+  top: 50%;
+  width: 116px;
+  height: 116px;
+  margin-top: -58px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 63, 58, 0.15) 0 42%, rgba(255, 63, 58, 0.06) 42% 100%);
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  z-index: -1;
+}
+.step:hover .stepNum {
+  color: var(--primary);
+}
+.step:hover .stepNum::before {
+  opacity: 1;
+  transform: scale(1);
+}
+.stepTitle {
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--gray-900);
+}
+.stepText {
+  margin-top: 8px;
+  color: var(--gray-700);
+}
+
+/* CTA */
+.cta {
+  position: relative;
+  padding: 48px 60px;
+  border-radius: var(--radius);
+  background: var(--gradient-soft);
+  overflow: hidden;
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  left: 52%;
+  top: -166px;
+  width: 235px;
+  height: 235px;
+  border-radius: 50%;
+  border: 24px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 0 28px rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+.ctaHead {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.ctaFields {
+  position: relative;
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 24px;
+  align-items: end;
+}
+
+/* Program */
+.program {
+  display: grid;
+  grid-template-columns: 600px 1fr;
+  gap: 105px;
+  align-items: start;
+}
+.accordion {
+  margin-top: 60px;
+}
+.programArt {
+  margin-top: 70px;
+  width: 100%;
+  max-width: 495px;
+  justify-self: end;
+}
+.programArt img {
+  width: 100%;
+  height: auto;
+}
+.programArt > span {
+  aspect-ratio: 495 / 554;
+  opacity: 0.4;
+}
+
+.related {
+  margin-top: 120px;
+}
+
+@media (max-width: 1280px) {
+  .aboutGrid {
+    grid-template-columns: 1fr 420px;
+  }
+  .program {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+}
+@media (max-width: 1100px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 30px;
+  }
+  .step:nth-child(2) .stepNum::after {
+    display: none;
+  }
+  .ctaFields {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 900px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+  }
+  .program {
+    grid-template-columns: 1fr;
+  }
+  .programArt {
+    margin: 0 auto;
+    max-width: 380px;
+  }
+}
+@media (max-width: 600px) {
+  .about {
+    margin-top: 64px;
+  }
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .stepNum::after {
+    display: none;
+  }
+  .cta {
+    padding: 32px 24px;
+  }
+  .ctaFields {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    padding: 24px;
+  }
+}
+
+.related {
+  margin-bottom: var(--section-gap);
+}

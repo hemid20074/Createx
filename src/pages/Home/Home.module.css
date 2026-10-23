@@ -1,0 +1,274 @@
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  min-height: 1080px;
+  padding: 200px 0 80px;
+  background: linear-gradient(33deg, rgba(255, 63, 58, 0.25) 0%, rgba(247, 94, 5, 0.2) 100%), #fff;
+  overflow: hidden;
+  display: flex;
+}
+.heroDecor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.heroInner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 602px;
+  grid-template-rows: 1fr auto;
+  gap: 40px 60px;
+}
+.heroText {
+  align-self: start;
+  padding-top: 12px;
+  max-width: 520px;
+}
+.showreel {
+  margin-left: -16px;
+}
+.heroTitle {
+  margin-top: 24px;
+  max-width: 496px;
+}
+.heroButtons {
+  margin-top: 60px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.heroArt {
+  align-self: start;
+  width: 602px;
+  max-width: 100%;
+  aspect-ratio: 602 / 551;
+  margin-right: -47px;
+}
+.heroArt img,
+.heroArt span {
+  width: 100%;
+  height: 100%;
+}
+.heroArt span {
+  opacity: 0.5;
+}
+.heroStats {
+  grid-column: 1 / -1;
+  align-self: end;
+}
+
+/* ===== Why Createx ===== */
+.why {
+  overflow: hidden;
+  padding: 0 0 0;
+}
+.whyBg {
+  position: absolute;
+  inset: 60px 0 16px;
+  pointer-events: none;
+}
+.whyInner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 705px 1fr;
+  gap: 135px;
+  align-items: start;
+}
+.whyImage {
+  aspect-ratio: 705 / 560;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.whyImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.whyText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.whyList {
+  margin: 40px 0 48px;
+  max-width: 390px;
+}
+
+/* ===== Benefits ===== */
+.tabs {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-radius: var(--radius);
+}
+.tab {
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-weight: 700;
+  color: var(--gray-600);
+  white-space: nowrap;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+.tab:hover {
+  color: var(--primary);
+}
+.tabActive {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.benefit {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 495px 1fr;
+  gap: 135px;
+  align-items: center;
+  animation: benefitIn 0.4s ease;
+}
+.benefitText {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.benefitArt {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 600 / 440;
+  justify-self: end;
+}
+.benefitArt img,
+.benefitArt span {
+  width: 100%;
+  height: 100%;
+}
+.benefitArt span {
+  opacity: 0.5;
+}
+@keyframes benefitIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+/* ===== Events ===== */
+.events {
+  position: relative;
+  margin-top: var(--section-gap);
+  padding: 80px 0 80px;
+  background: var(--gradient-soft);
+}
+.eventsBg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.eventList {
+  position: relative;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.more {
+  position: relative;
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.events + section {
+  margin-top: 120px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1280px) {
+  .heroInner {
+    grid-template-columns: 1fr 480px;
+  }
+  .heroArt {
+    margin-right: 0;
+  }
+  .whyInner {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+  .benefit {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 0;
+    padding: 140px 0 80px;
+  }
+  .heroInner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .heroText {
+    max-width: 640px;
+    min-width: 0;
+  }
+  .heroTitle {
+    max-width: 640px;
+  }
+  .heroArt {
+    justify-self: center;
+    width: 100%;
+    max-width: 520px;
+  }
+  .tabs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 860px) {
+  .whyInner,
+  .benefit {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .benefitArt {
+    justify-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .showreel {
+    margin-left: 0;
+  }
+  .hero {
+    padding: 120px 0 60px;
+  }
+  .heroButtons {
+    margin-top: 40px;
+  }
+  .heroButtons > * {
+    flex: 1;
+    padding: 0 16px;
+  }
+  .tabs {
+    grid-template-columns: 1fr;
+  }
+  .events {
+    padding: 64px 0;
+  }
+  .more {
+    gap: 20px;
+  }
+}

@@ -1,0 +1,61 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.trigger {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--gray-900);
+}
+.icon {
+  flex-shrink: 0;
+  margin: 5px 12px 0 0;
+  color: var(--primary);
+}
+.label {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--gray-900);
+  transition: color 0.2s ease;
+}
+.title {
+  color: var(--gray-800);
+}
+.trigger:hover .label,
+.open .label {
+  color: var(--primary);
+}
+
+.panel {
+  padding: 16px 0 0 40px;
+  color: var(--gray-800);
+  animation: open 0.25s ease;
+}
+
+@keyframes open {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 600px) {
+  .trigger {
+    flex-wrap: wrap;
+    font-size: 18px;
+  }
+  .title {
+    flex-basis: 100%;
+    padding-left: 32px;
+  }
+  .panel {
+    padding-left: 32px;
+  }
+}

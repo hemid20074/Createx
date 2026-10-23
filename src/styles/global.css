@@ -1,0 +1,227 @@
+/* ===== Design tokens (from Figma variables) ===== */
+:root {
+  --primary: #ff3f3a;
+  --secondary: #ffcf2d;
+  --success: #03cea4;
+  --info: #5a87fc;
+  --warning: #f89828;
+  --danger: #ff4242;
+  --pink: #f52f6e;
+  --purple: #7772f1;
+
+  --white: #ffffff;
+  --gray-200: #f4f5f6;
+  --gray-300: #e5e8ed;
+  --gray-400: #d7dadd;
+  --gray-500: #b3b7bc;
+  --gray-600: #9a9ca5;
+  --gray-700: #787a80;
+  --gray-800: #424551;
+  --gray-900: #1e212c;
+
+  --gradient: linear-gradient(25deg, #ff3f3a 0%, #f75e05 100%);
+  --gradient-soft: linear-gradient(25deg, rgba(255, 63, 58, 0.2) 0%, rgba(247, 94, 5, 0.2) 100%);
+
+  --shadow-small:
+    0 80px 80px -20px rgba(154, 156, 165, 0.08),
+    0 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0 4px 4px -4px rgba(30, 33, 44, 0.03);
+  --shadow-regular:
+    0 80px 80px -20px rgba(154, 156, 165, 0.16),
+    0 30px 24px -10px rgba(154, 156, 165, 0.1),
+    0 12px 10px -6px rgba(154, 156, 165, 0.08),
+    0 4px 4px -4px rgba(30, 33, 44, 0.05);
+  --shadow-primary:
+    0 80px 80px -20px rgba(255, 63, 58, 0.16),
+    0 30px 24px -10px rgba(255, 63, 58, 0.1),
+    0 12px 10px -6px rgba(255, 63, 58, 0.08),
+    0 4px 4px -4px rgba(30, 33, 44, 0.05);
+
+  --font: 'Lato', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --radius: 4px;
+
+  --container: 1230px;
+  --gutter: 15px;
+  --section-gap: 180px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --section-gap: 120px;
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --section-gap: 80px;
+  }
+}
+
+/* ===== Reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--gray-800);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+/* ===== Layout helpers ===== */
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.section {
+  position: relative;
+  margin-top: var(--section-gap);
+}
+
+/* ===== Typography (Figma text styles) ===== */
+.display-2 {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  color: var(--gray-900);
+}
+.h1 {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.3;
+  color: var(--gray-900);
+}
+.h2 {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.3;
+  color: var(--gray-900);
+}
+.h3 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--gray-900);
+}
+.h4 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--gray-900);
+}
+.h6 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-900);
+}
+.lead {
+  font-size: 20px;
+  line-height: 1.5;
+}
+.large {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.small {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .display-2 {
+    font-size: 52px;
+  }
+  .h1 {
+    font-size: 38px;
+  }
+}
+@media (max-width: 600px) {
+  .display-2 {
+    font-size: 40px;
+  }
+  .h1 {
+    font-size: 30px;
+  }
+  .h2 {
+    font-size: 26px;
+  }
+  .h3 {
+    font-size: 22px;
+  }
+  .lead {
+    font-size: 18px;
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* let grid/flex children shrink below their content width on small screens */
+.container :where(div, form, aside, article, header, footer, figure, li) {
+  min-width: 0;
+}

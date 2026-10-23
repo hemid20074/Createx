@@ -1,0 +1,56 @@
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-900);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.arrow:hover:not(:disabled) {
+  background: var(--primary);
+  color: var(--white);
+  box-shadow: var(--shadow-primary);
+}
+.arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.dots {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.dot {
+  width: 30px;
+  height: 18px;
+  position: relative;
+}
+.dot::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 3px;
+  margin-top: -1.5px;
+  background: var(--gray-500);
+  transition: background-color 0.25s ease;
+}
+.dot:hover::before {
+  background: var(--gray-700);
+}
+.dotActive::before {
+  background: var(--gray-900);
+}

@@ -1,0 +1,30 @@
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.link {
+  display: flex;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+.dark .link {
+  color: var(--gray-700);
+}
+.dark .link:hover {
+  color: var(--primary);
+}
+.light .link {
+  color: var(--white);
+  opacity: 0.6;
+}
+.light .link:hover {
+  opacity: 1;
+}
+.white .link {
+  color: var(--white);
+}
+.white .link:hover {
+  color: var(--secondary);
+}

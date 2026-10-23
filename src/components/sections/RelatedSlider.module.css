@@ -1,0 +1,53 @@
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.track {
+  --gap: 30px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - var(--gap) * (var(--per-view) - 1)) / var(--per-view));
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  /* room for card shadows */
+  padding: 4px 4px 60px;
+  margin: 56px -4px -60px;
+}
+.track::-webkit-scrollbar {
+  display: none;
+}
+.item {
+  scroll-snap-align: start;
+}
+
+.more {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .track {
+    --per-view: 2 !important;
+  }
+}
+@media (max-width: 700px) {
+  .track {
+    --per-view: 1 !important;
+    grid-auto-columns: 88%;
+    margin-top: 36px;
+  }
+  .more {
+    margin-top: 48px;
+    gap: 20px;
+  }
+}

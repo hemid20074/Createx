@@ -1,0 +1,43 @@
+.plain {
+  padding-top: 152px;
+}
+
+.banner {
+  position: relative;
+  min-height: 468px;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 80px;
+  background: linear-gradient(33deg, rgba(255, 63, 58, 0.25) 0%, rgba(247, 94, 5, 0.2) 100%), #fff;
+  overflow: hidden;
+}
+.decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.bannerInner {
+  position: relative;
+}
+.bannerInner > div {
+  max-width: 1020px;
+}
+
+@media (max-width: 1024px) {
+  .plain {
+    padding-top: 130px;
+  }
+  .banner {
+    min-height: 380px;
+    padding-top: 120px;
+  }
+}
+@media (max-width: 600px) {
+  .plain {
+    padding-top: 110px;
+  }
+  .banner {
+    min-height: 0;
+    padding: 120px 0 64px;
+  }
+}

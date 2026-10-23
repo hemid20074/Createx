@@ -1,0 +1,72 @@
+.card {
+  text-align: center;
+  outline: none;
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 285 / 340;
+  border-radius: var(--radius);
+  background: var(--secondary);
+  overflow: hidden;
+}
+.image {
+  position: absolute;
+  left: 7%;
+  top: 20px;
+  width: 86%;
+  height: calc(100% - 20px);
+  object-fit: cover;
+  object-position: top;
+}
+.media > span {
+  position: absolute;
+  inset: 20px 20px 0;
+  width: auto;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 33, 44, 0) 43.9%,
+    rgba(30, 33, 44, 0.03) 55.2%,
+    rgba(30, 33, 44, 0.33) 68.7%,
+    rgba(30, 33, 44, 0.56) 76.2%,
+    rgba(30, 33, 44, 0.77) 83.7%,
+    rgba(30, 33, 44, 0.92) 91.5%,
+    #1e212c 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.card:hover .overlay,
+.card:focus-within .overlay,
+.card:focus-visible .overlay {
+  opacity: 1;
+}
+
+.name {
+  margin-top: 16px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--gray-800);
+}
+.role {
+  margin-top: 4px;
+  color: var(--gray-700);
+}
+
+@media (hover: none) {
+  .overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(30, 33, 44, 0) 70%, rgba(30, 33, 44, 0.7) 100%);
+  }
+}

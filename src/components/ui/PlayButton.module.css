@@ -1,0 +1,48 @@
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--gray-900);
+}
+
+.btn {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn svg {
+  width: 12px;
+  height: 14px;
+  margin-left: 3px;
+  fill: var(--white);
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.2;
+  transform: scale(0.6);
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+.wrap:hover .btn::before,
+.wrap:focus-visible .btn::before {
+  transform: scale(1);
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.wrap:hover .label {
+  color: var(--primary);
+}
